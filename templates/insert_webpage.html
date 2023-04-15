@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+            background-color: burlywood;
+            color:black;
+            border: 5px;
+        }
+        h1
+        {
+            background-color: aqua;
+        }
+        select:hover
+        {
+            background-color: brown;
+            border-radius: 12px;
+            color: black;
+            cursor: pointer;
+        }
+        label
+        {
+            color:darkred;
+            box-shadow: 40px;
+        }
+        input
+        {
+            background-color:lightcoral;
+            color: whitesmoke;
+            border-radius: 12px;
+        }
+        #a:hover
+        {
+            box-shadow: inset;
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <table>
+        <h1>insert_webpagedata</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="tn">Topic_name</label>
+            <select name="topic" id="topic">
+                {% for a in topic %}
+                <option value="{{a}}">{{a.topic_name}}</option>
+                {% endfor %}     
+            </select>
+            <br><br>
+            <label for="nm">Name</label>
+            <input type="text" name="nm" id="nm">
+            <br><br>
+            <label for="ur">url</label>
+            <input type="url" name="ur" id="ur">
+            <br><br>
+            <label for="em">Email</label>
+            <input type="email" name="em" id="em">
+            <br><br>
+            <input id='a' type="submit" value="insert_webpage">          
+        
+        </form>
+        </table>                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    </center>
+    
+</body>
+</html>
